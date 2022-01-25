@@ -1,0 +1,167 @@
+import pyttsx3 as v
+import datetime
+import pyjokes
+import wikipedia
+
+engine = v.init()
+engine.setProperty('rate', 170)
+
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
+
+engine.say('Hello, my name is Fedora, I am Wellspring University A I  assistant')
+
+engine.runAndWait()
+
+
+
+def talk(text):
+    engine.say(text)
+    engine.runAndWait()
+
+
+def user_input():
+    talk('press 1 to find a student')
+    talk('Press 2 to find the occupants in wellspring University Male hostel')
+    response = input('INPUT ???')
+    if '1' in response:
+        talk('type in the matriculation number of the student you are looking for')
+
+        matric = input('type in  matriculation number')
+        if 'CCOM/21402' in matric:
+            talk('Student found')
+            talk('Student Name is Ukoha Emmanuel Kelechi')
+            talk('Student Department is Cyber Security')
+            talk('Student is in 100 Level')
+            talk('Student Sex is a Male')
+            talk('Student stays in room 7')
+
+        elif 'CCOM/21401' in matric:
+            talk('Student Found')
+            talk('Student Name is Ibu, Emmanuel, Oluwaseun')
+            talk('Student Department is Cyber Security')
+            talk('Student is in 200 level')
+            talk('Student sex is male')
+            talk('Student Stays in room 5')
+
+        elif 'CCOM/21304' in matric:
+            talk('student found')
+            talk('stiudent Name is Marvellous, ige')
+            talk('Student department is Software engineering')
+            talk('student is in 200 level')
+            talk('student sex is male')
+            talk('Student stays in room 3')
+
+        elif 'CCOM/21352' in matric:
+            talk('Student Found')
+            talk('Student name iS Abbas Abdul Malik ')
+            talk('Student Department is Software Engineering')
+            talk('Student Sex is Male')
+            talk('Student stays in room 1')
+
+        elif 'CBMHS/21006' in matric:
+            talk('Student found')
+            talk('Student name is olusoji precious remilekun')
+            talk('Student department is nursing')
+            talk('student sex is female')
+            talk('i cannot find precious room number')
+
+        elif 'CBMHS/21007' in matric:
+            talk('student found')
+            talk('Student name is Cherry osarugue')
+            talk('Student department is Nursing')
+            talk('Student sex is female')
+            talk('i cannot find cherry room number')
+
+        elif 'CCOM/21301' in matric:
+            talk('student found')
+            talk('student name is Amarachi monwuba')
+            talk('student department is female')
+            talk('Student sex is female')
+            talk('I cannot find amarachi room number')
+
+        elif 'CBMHS/21005' in matric:
+            talk('student found')
+            talk('Student name is Musa Gift')
+            talk('Student department is Nursing')
+            talk('student sex is female')
+            talk('Gift room number not available')
+
+        elif 'CBMHS/21014' in matric:
+            talk('student found')
+            talk('student name is Patrick Divine Aniekan')
+            talk('student department is nursing')
+            talk('student sex is female')
+            talk('Annie room number is not available')
+
+        elif 'CBHMS/21201' in matric:
+            talk('student found')
+            talk('student name is onwumere chinenyenwa')
+            talk('student department is Mass communication')
+            talk('student sex is female')
+            talk('Chinenyenwa room number not found')
+
+        elif 'CSMS/21104' in matric:
+            talk('student found')
+            talk('student name is Nyong joy asuquo')
+            talk('student department is international relations')
+            talk('student sex is female')
+            talk('Joy room number not found')
+        else:
+            talk('Matric number not found')
+
+
+
+
+    elif '2' in response:
+        talk('type in your room number, i would tell you all the occupants in the room you are looking for')
+        room = input('Room Number ???')
+        if '7' in room:
+            talk('There are 6 students in Room 1')
+            talk('The occupants in this room are as follows')
+            talk('Emmanuel Ukoha, Department, Cyber security, Level, 100.  Matric Number C C O M 2 1 4 0 2')
+            talk(' The second occupant is Obatta Jude, Department Computer Science, Level, 100. Matric Number, Jude does not have a matriculation number')
+            talk(' The third occupant is Joshua, Department, Computer Science, Level, 200,  Matric Number, Joshua matriculation number not found')
+            talk(' The fourth occupant is Charles, Department Software Engineering, Level, 100. Matric Number, Charles does not have a matriculation number')
+            talk( 'The fifth occupant is Assoro, Department Accounting, Level, 300. Matric Number, Assoro matriculation number not found')
+
+        if '1' in room:
+            talk('There are 5 students in Room 1')
+            talk('The occupants in this room are as follows')
+            talk('Abbas Abdul Malik, Department, Software Engineering, Level, 100. Matric Number C C O M 2 1 3 5 2')
+            talk('The second occupant is Obi Dennis')
+
+        elif '2' in room:
+            talk('There are 4 students in Room 2')
+            talk("There seem to be a problem with the database")
+
+        elif '3' in room:
+            talk('There are 5 students in  room 3')
+            talk('The occupants in this room are as follows')
+            talk('Marvellous, DEepartment, Computer science, Level, 100. Matric Number not found ')
+            talk('The second occupant is forbes, Department, Computer science, Level, 200. Matric number, Forbes matriculation number not found')
+            talk('The third occupant is airsayray, Department, Computer science, Level, 100, Matric Number, Airsayray matriculation number not found')
+            talk('The fourth occupant is Daniel, Department, Computer science, Level, 400, Matric Number, Daniel matriculation not found ')
+            talk('The fifth occupant is Jeffrey, Department, Public Administration, Level, 200, Matric Number, Jeffrey matriculation not found')
+
+        elif '4' in room:
+            talk('There are lots of people in this room, at the moment i cannot give an accurate information of the occupants in this room')
+
+        elif '5' in room:
+            talk('There are 5 students in Room 2')
+            talk("There seem to be a problem with the database")
+
+        elif '6' in room:
+            talk('There are 4 students in Room 2')
+            talk("There seem to be a problem with the database")
+
+
+
+        else:
+            talk(' at the moment i cannot give an accurate details of the occupants in this room')
+
+    else:
+        talk(('Wrong Command'))
+
+while True:
+    user_input()
